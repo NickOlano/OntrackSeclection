@@ -1,0 +1,64 @@
+@charset "ISO-8859-1";
+
+/* Copyright (c) 2012 Jeff Stern and Nick Olano */
+
+body {
+ font-family: Helvetica, arial, sans-serif;
+}
+
+#mainbox {
+  border: 1px solid black;
+  margin: 0px auto;
+  padding: 10px;
+  width: 800px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+#panel {
+  width: 800px;
+}
+
+select, input {
+  width: 175px;
+}
+
+.thinselect {
+  width: 50px;
+}
+
+input {
+  margin: 0px -5px 0px 10px;
+}
+
+.inputappend {
+  margin-right: 5px;
+}
+
+.submit {
+  margin: 10px 45%;
+  width: 100px;
+}
+
+.r1 {
+  background: #CCC;
+}
+
+.r0 {
+  font-weight: bold;
+}
+
+.r0 .c1, .r0 .c2, .r0 .c3, .r0 .c4 {
+ border: 0px;
+}
+
+.c1, .c2, .c3, .c4 {
+  border-top: 1px solid #000;
+}
+
+.c1, .c2, .c3 {
+  border-right: 1px solid #000;  
+}

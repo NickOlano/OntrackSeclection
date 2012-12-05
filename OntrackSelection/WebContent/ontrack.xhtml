@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- jsf:pagecode language="java" location="/src/pagecode/on.java" --><!-- /jsf:pagecode -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Search for Sections</title>
+	<meta http-equiv="Content-Type"
+		content="application/xhtml+xml; charset=UTF-8" />
+	<meta name="copyright" content="© 2012 by Jeff Stern and Nick Olano" />
+
+	<h:outputStylesheet library="css" name="ontrack.css" />
+</h:head>
+
+<h:body>
+<div id="mainbox">
+	
+	<h1>Search for Sections</h1>
+	
+	<h:form styleClass="form" id="form1">
+	<label for="terms">Term </label> 
+	<h:selectOneMenu id="terms" label="terms" required="true" value="#{on.terms}">
+        <f:selectItems value="#{on.termsItems}" />
+      </h:selectOneMenu>
+      <h:message errorStyle="color:red; display:inline" for="terms" showDetail="True"/>
+    
+	<hr />
+	
+	<label for="startDate">
+	  Starting On/After Date
+	</label>
+	<h:inputText id="startDate" value="#{on.startingDate}" class="inputappend" />
+	
+	<label for="endDate">
+  	  Ending By Date
+	</label>
+	<h:inputText id="endDate" value="#{on.endingDate}" />
+	
+	<hr />
+	<!--  Panel grid with the four different selections -->
+	<h:panelGrid id="panel" columns="4" cellspacing="0" width="800"
+		rowClasses="r0, r1, r2, r1, r2" columnClasses="c1, c2, c3, c4">
+		 
+        <h:outputText value="Subjects" />
+        <h:outputText value="Course Levels" />
+        <h:outputText value="Course Number" />
+        <h:outputText value="Section" />
+
+       <h:selectOneMenu value="#{on.subject1}">
+        <f:selectItems value="#{on.subjectItems}" />
+      </h:selectOneMenu>
+      <h:selectOneMenu value="#{on.level}">
+        <f:selectItems value="#{on.levelItems}" />
+      </h:selectOneMenu>
+      <h:inputText value="#{on.courseNum}"/>
+      <h:inputText value="#{on.selection}"/> 
+      
+      <h:selectOneMenu value="#{on.subject2}">
+        <f:selectItems value="#{on.subjectItems}" />
+      </h:selectOneMenu>
+      <h:selectOneMenu value="#{on.level}">
+        <f:selectItems value="#{on.levelItems}" />
+      </h:selectOneMenu>
+      <h:inputText value="#{on.courseNum}"/>
+      <h:inputText value="#{on.selection}"/> 
+      
+      <h:selectOneMenu value="#{on.subject3}">
+        <f:selectItems value="#{on.subjectItems}" />
+      </h:selectOneMenu>
+      <h:selectOneMenu value="#{on.level}">
+        <f:selectItems value="#{on.levelItems}" />
+      </h:selectOneMenu>
+      <h:inputText value="#{on.courseNum}"/>
+      <h:inputText value="#{on.selection}"/> 
+      <h:selectOneMenu value="#{on.subject4}">
+        <f:selectItems value="#{on.subjectItems}" />
+      </h:selectOneMenu>
+      <h:selectOneMenu value="#{on.level}">
+        <f:selectItems value="#{on.levelItems}" />
+      </h:selectOneMenu>
+      <h:inputText value="#{on.courseNum}"/>
+      <h:inputText value="#{on.selection}"/> 
+    </h:panelGrid>
+    
+	<hr />	
+	
+	<label for="startTime">
+  	  Sections Meeting After
+	</label>
+	<h:selectOneMenu id="startTime" value="#{on.startTime}" class="thinselect inputappend">
+        <f:selectItems value="#{on.timeItems}" />
+      </h:selectOneMenu>
+      
+	<label for="endTime">
+  	  Sections Ending Before
+	</label><h:selectOneMenu id="endTime" value="#{on.endTime}" class="thinselect">
+        <f:selectItems value="#{on.timeItems}" />
+      </h:selectOneMenu>
+      
+		<hr />
+	<h:commandButton action="#{on.check}" value="SUBMIT" class="submit" />
+	</h:form>
+</div>
+</h:body>
+</html>
